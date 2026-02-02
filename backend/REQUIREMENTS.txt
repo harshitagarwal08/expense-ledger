@@ -1,0 +1,7 @@
+fastapi
+jose
+passlib
+psycog2.binary
+pydantic
+sqlalchemy
+uvicorn
