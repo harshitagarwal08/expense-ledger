@@ -6,13 +6,16 @@ from app.auth.jwt import create_access_token
 
 router = APIRouter()
 
+
 # main would route the client request here
 @router.post("/login")
 def login(email: str, password: str):
-    query = text("""
+    query = text(
+        """
         SELECT id, password_hash FROM users
         WHERE email = :email
-    """)
+    """
+    )
     # by using with, query execution is isolated
     with engine.connect() as conn:
         user = conn.execute(query, {"email": email}).fetchone()

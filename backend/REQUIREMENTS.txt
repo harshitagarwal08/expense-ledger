@@ -1,7 +1,7 @@
-fastapi
-jose
-passlib
-psycog2.binary
-pydantic
-sqlalchemy
-uvicorn
+fastapi==0.100.0
+uvicorn==0.25.0
+python-dotenv==1.1.0
+sqlalchemy==2.0.20
+pydantic==1.11.9
+passlib[bcrypt]==1.7.5
+python-jose==3.3.0
