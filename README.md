@@ -45,6 +45,7 @@ This backend system is made robust against errors and maintains data integrity a
 
 ## Folder Structure
 
+```text
 expense-ledger
 ├── backend
 │ ├── app
@@ -68,6 +69,7 @@ expense-ledger
 │ └── schema.sql
 ├── frontend
 └── README.md
+```
 
 ## Environment Variables
 
