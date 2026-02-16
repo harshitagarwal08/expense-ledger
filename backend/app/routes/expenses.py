@@ -1,4 +1,9 @@
+from datetime import date
+from typing import Optional
+from datetime import date
+
 from fastapi import APIRouter, Depends, HTTPException, Query
+
 from app.database import engine
 from app.schemas import ExpenseCreate
 from app.crud.expenses import (
@@ -23,6 +28,9 @@ def add_expense(expense: ExpenseCreate, user_id: int = Depends(get_current_user)
 @router.get("/expenses")
 def get_expenses(
     user_id: int = Depends(get_current_user),
+    category: Optional[str] = Query(default=None),
+    from_date: Optional[date] = Query(default=None),
+    to_date: Optional[date] = Query(default=None),
     limit: int = Query(default=10, ge=1, le=100),
     offset: int = Query(default=0, ge=0),
 ):
